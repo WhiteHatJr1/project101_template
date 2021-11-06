@@ -8,7 +8,7 @@ class TransferData:
 #
     def upload_file(self, file_from, file_to):
         #function to upload
-      
+      dbx = dropbox.Dropbox(self.access_token)
 
             # enumerate local files recursively
         for root, dirs, files in os.walk(file_from):
@@ -27,7 +27,7 @@ class TransferData:
 def main():
     access_token = 'riFu6Ybhc9AAAAAAAAAAHWkfE9AiGyD6n4254tOxesw7ShRjGjFhrjhRVa3NX3mx'
     #transfer data function
- 
+ transferData = TransferData(access_token) 
 
     file_from = str(input("Enter the folder path to transfer : -"))
     file_to = input("enter the full path to upload to dropbox:- ")  # This is the full path to upload the file to, including name that you wish the file to be called once uploaded.
